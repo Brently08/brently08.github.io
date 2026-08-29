@@ -1,9 +1,9 @@
-5r<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BrainFreeze Studios — Mobile Games</title>
+<title>Brain Freeze Studios — Mobile Games</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -65,8 +65,8 @@
   }
 
   .logo-icon {
-    width: 100px;
-    height: 100px;
+    width: 140px;
+    height: 140px;
     border-radius: 22px;
     border: 2px solid rgba(201,168,76,0.4);
     box-shadow: 0 0 40px rgba(201,168,76,0.15), 0 8px 32px rgba(0,0,0,0.5);
@@ -74,8 +74,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 48px;
+    overflow: hidden;
     margin: 0 auto 16px;
+  }
+
+  .logo-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .studio-name {
@@ -163,9 +169,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 36px;
+    overflow: hidden;
     margin: 0 auto 20px;
     box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  }
+
+  .app-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .app-name {
@@ -204,16 +216,25 @@
     border: 1px solid rgba(201,168,76,0.2);
   }
 
-  .btn-download {
-    display: inline-block;
+  .platform-links {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
     margin-top: 16px;
-    padding: 10px 24px;
+    flex-wrap: wrap;
+  }
+
+  .btn-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 18px;
     background: linear-gradient(135deg, var(--gold), #a87830);
     color: #0a0e1a;
     font-family: 'Lato', sans-serif;
     font-weight: 700;
-    font-size: 13px;
-    letter-spacing: 0.08em;
+    font-size: 12px;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
     text-decoration: none;
     border-radius: 8px;
@@ -222,11 +243,67 @@
 
   .btn-download:hover { opacity: 0.85; }
 
-  /* PRIVACY POLICY */
-  .privacy-section {
+  /* PARTNERSHIP */
+  .partnership-section {
     background: var(--navy);
     border-top: 1px solid rgba(201,168,76,0.1);
     border-bottom: 1px solid rgba(201,168,76,0.1);
+    padding: 70px 20px;
+    text-align: center;
+  }
+
+  .partnership-inner {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .partnership-logo {
+    width: 110px;
+    margin: 0 auto 24px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  }
+
+  .partnership-logo img {
+    width: 100%;
+    display: block;
+  }
+
+  .partnership-inner h2 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(16px, 3vw, 22px);
+    color: var(--gold);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .partnership-inner p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+
+  .btn-visit {
+    display: inline-block;
+    padding: 12px 28px;
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.2s;
+  }
+
+  .btn-visit:hover { background: rgba(201,168,76,0.1); }
+
+  /* PRIVACY POLICY */
+  .privacy-section {
+    background: var(--deep);
     padding: 80px 20px;
   }
 
@@ -378,9 +455,10 @@
 <body>
 
 <nav>
-  <a href="#" class="nav-brand">BrainFreeze Studios</a>
+  <a href="#" class="nav-brand">Brain Freeze Studios</a>
   <ul class="nav-links">
     <li><a href="#apps">Apps</a></li>
+    <li><a href="#partnership">Partnership</a></li>
     <li><a href="#privacy">Privacy</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -389,8 +467,10 @@
 <!-- HERO -->
 <section class="hero">
   <div class="logo-wrap">
-    <div class="logo-icon">🧊</div>
-    <div class="studio-name">BrainFreeze Studios</div>
+    <div class="logo-icon">
+      <img src="IMG_5225 2.PNG" alt="Brain Freeze Studios logo">
+    </div>
+    <div class="studio-name">Brain Freeze Studios</div>
     <div class="studio-tagline">Independent Mobile Game Developer</div>
   </div>
   <div class="hero-divider"></div>
@@ -403,20 +483,49 @@
   <div class="apps-grid">
 
     <div class="app-card">
-      <div class="app-icon">🧭</div>
+      <div class="app-icon">
+        <img src="sudoku-quest-icon..png" alt="Sudoku Quest icon">
+      </div>
       <div class="app-name">Sudoku Quest</div>
       <p class="app-desc">Classic Sudoku reimagined with themed worlds, atmospheric music, and stunning visuals. Navigate the Numbers across six unique realms.</p>
-      <span class="app-badge badge-live">Now on Google Play</span><br>
-      <a href="https://play.google.com/store/apps/details?id=com.brainfreezestudios.sudokuworlds" class="btn-download" target="_blank">Download Free</a>
+      <span class="app-badge badge-live">Now on iOS &amp; Android</span>
+      <div class="platform-links">
+        <a href="https://play.google.com/store/apps/details?id=com.brainfreezestudios.sudokuworlds" class="btn-download" target="_blank">Google Play</a>
+        <a href="#" class="btn-download" target="_blank">App Store</a>
+      </div>
     </div>
 
     <div class="app-card">
-      <div class="app-icon">🍽️</div>
-      <div class="app-name">Rico Rico</div>
-      <p class="app-desc">The ultimate companion app for Rico Rico restaurant. Browse the menu, explore daily specials, and experience Cuban cuisine like never before.</p>
+      <div class="app-icon">
+        <img src="22F0C60E-F5C1-454B-9F08-A2FC5FFAB6BB.PNG" alt="Card Vault icon">
+      </div>
+      <div class="app-name">Card Vault</div>
+      <p class="app-desc">A 14-game card platform bringing your favorite classic card games together in one polished, elegant collection.</p>
       <span class="app-badge badge-coming">Coming Soon</span>
     </div>
 
+    <div class="app-card">
+      <div class="app-icon">
+        <img src="IMG_5151.jpg" alt="Rico Rico logo">
+      </div>
+      <div class="app-name">Rico Rico</div>
+      <p class="app-desc">Cuba's first restaurant app for the people. Browse the menu, explore daily specials, and experience Cuban cuisine like never before.</p>
+      <span class="app-badge badge-coming">Coming Soon</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- RSL PARTNERSHIP -->
+<section class="partnership-section" id="partnership">
+  <div class="partnership-inner">
+    <div class="partnership-logo">
+      <img src="rsl-logo.png" alt="RSL Solution logo">
+    </div>
+    <h2>Proud to Partner With RSL</h2>
+    <p>Brain Freeze Studios is proud to announce our partnership with RSL Solution. Beyond building games, our team collaborates with RSL to deliver AI integration, website development, and full-scale digital solutions for businesses looking to grow.</p>
+    <p>If you're interested in AI, website, or technology integration for your own business, RSL is ready to help.</p>
+    <a href="https://rslsolution.ca" class="btn-visit" target="_blank">Visit RSL</a>
   </div>
 </section>
 
@@ -426,13 +535,13 @@
     <h2>Privacy Policy</h2>
 
     <p>Last updated: June 2026</p>
-    <p>This Privacy Policy applies to all applications developed and published by BrainFreeze Studios, including Sudoku Quest and Rico Rico.</p>
+    <p>This Privacy Policy applies to all applications developed and published by Brain Freeze Studios, including Sudoku Quest, Card Vault, and Rico Rico.</p>
 
     <h3>1. Information We Collect</h3>
     <p>Our apps are designed with your privacy in mind. We do not collect, store, or transmit any personally identifiable information to external servers. All data including your player name, game progress, settings, and coin balance is stored locally on your device only.</p>
 
     <h3>2. Data Storage</h3>
-    <p>BrainFreeze Studios apps save everything locally on your device. This includes:</p>
+    <p>Brain Freeze Studios apps save everything locally on your device. This includes:</p>
     <ul>
       <li>Player name and password (stored locally, never transmitted)</li>
       <li>Game progress and statistics</li>
@@ -444,7 +553,7 @@
     <p>Our apps may display advertisements to support free access. Future versions may integrate third-party advertising networks. When implemented, these networks may collect anonymized usage data in accordance with their own privacy policies. We will update this policy accordingly.</p>
 
     <h3>4. Children's Privacy</h3>
-    <p>BrainFreeze Studios apps are designed to be family-friendly and suitable for all ages. We do not knowingly collect personal information from children under 13. Our apps do not require account registration with any external service.</p>
+    <p>Brain Freeze Studios apps are designed to be family-friendly and suitable for all ages. We do not knowingly collect personal information from children under 13. Our apps do not require account registration with any external service.</p>
 
     <h3>5. Third-Party Services</h3>
     <p>Our apps do not currently integrate any third-party analytics, tracking, or data collection services. Any future integrations will be disclosed in an updated Privacy Policy.</p>
@@ -457,7 +566,7 @@
 
     <h3>8. Contact Us</h3>
     <p>If you have any questions about this Privacy Policy or our apps, please contact us at:</p>
-    <p><strong style="color: var(--gold-light);">BrainFreeze Studios</strong><br>
+    <p><strong style="color: var(--gold-light);">Brain Freeze Studios</strong><br>
     Arnprior, Ontario, Canada<br>
     Email: <a href="mailto:rslsolutioncanada@yahoo.com">rslsolutioncanada@yahoo.com</a></p>
   </div>
@@ -473,7 +582,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2026 BrainFreeze Studios. All rights reserved. | Arnprior, Ontario, Canada</p>
+  <p>© 2026 Brain Freeze Studios. All rights reserved. | Arnprior, Ontario, Canada | Proud partner of RSL Solution</p>
 </footer>
 
 </body>
