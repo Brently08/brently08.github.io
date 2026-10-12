@@ -124,7 +124,7 @@
   /* APPS SECTION */
   .section {
     padding: 80px 20px;
-    max-width: 900px;
+    max-width: 1100px;
     margin: 0 auto;
   }
 
@@ -139,12 +139,15 @@
   }
 
   .apps-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 24px;
   }
 
   .app-card {
+    flex: 0 1 calc(33.333% - 16px);
+    min-width: 250px;
     background: var(--card);
     border: 1px solid rgba(201,168,76,0.15);
     border-radius: 16px;
@@ -242,6 +245,114 @@
   }
 
   .btn-download:hover { opacity: 0.85; }
+
+
+  /* RICO PHOTO */
+  .app-photo {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(201,168,76,0.2);
+  }
+
+  /* GAMEPLAY */
+  .gameplay-group { margin-bottom: 48px; }
+
+  .gameplay-group h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 16px;
+    color: var(--gold-light);
+    letter-spacing: 0.1em;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .shots {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .shots img {
+    width: 200px;
+    aspect-ratio: 1 / 2.05;
+    object-fit: cover;
+    border-radius: 22px;
+    border: 2px solid rgba(201,168,76,0.25);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.5);
+  }
+
+  /* ABOUT */
+  .about-section {
+    padding: 70px 20px;
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .about-section h2 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(18px, 3vw, 26px);
+    color: var(--gold);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .about-section p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--muted);
+  }
+
+  /* WORK WITH US */
+  .work-section {
+    padding: 80px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .work-intro {
+    max-width: 600px;
+    margin: -24px auto 40px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--muted);
+  }
+
+  .work-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+
+  .work-card {
+    flex: 1 1 250px;
+    max-width: 300px;
+    background: var(--card);
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 14px;
+    padding: 28px 24px;
+  }
+
+  .work-card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 16px;
+    color: var(--gold-light);
+    margin-bottom: 10px;
+  }
+
+  .work-card p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--muted);
+  }
 
   /* PARTNERSHIP */
   .partnership-section {
@@ -448,6 +559,10 @@
 
   .nav-links a:hover { color: var(--gold); }
 
+  @media (max-width: 800px) {
+    .app-card { flex: 1 1 100%; }
+  }
+
   @media (max-width: 480px) {
     .nav-links { display: none; }
     nav { justify-content: center; }
@@ -460,7 +575,9 @@
   <a href="#" class="nav-brand">Brain Freeze Studios</a>
   <ul class="nav-links">
     <li><a href="#apps">Apps</a></li>
-    <li><a href="#partnership">Partnership</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work With Us</a></li>
+    <li><a href="https://rslsolution.ca" target="_blank" rel="noopener">RSL</a></li>
     <li><a href="#privacy">Privacy</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -492,21 +609,44 @@
       <p class="app-desc">Classic Sudoku reimagined with themed worlds, atmospheric music, and stunning visuals. Navigate the Numbers across six unique realms.</p>
       <span class="app-badge badge-live">Now on iOS &amp; Android</span>
       <div class="platform-links">
-        <a href="https://play.google.com/store/apps/details?id=com.brainfreezestudios.sudokuworlds" class="btn-download" target="_blank">Google Play</a>
-        <a href="#" class="btn-download" target="_blank">App Store</a>
+        <a href="https://apps.apple.com/ca/app/sudoku-quest/id6779312491" class="btn-download" target="_blank" rel="noopener">App Store</a>
+        <a href="https://play.google.com/store/apps/details?id=com.brainfreezestudios.sudokuworlds" class="btn-download" target="_blank" rel="noopener">Google Play</a>
       </div>
     </div>
 
     <div class="app-card">
       <div class="app-icon">
-        <img src="22F0C60E-F5C1-454B-9F08-A2FC5FFAB6BB.PNG" alt="Card Vault icon">
+        <img src="card-vault-icon.png" alt="Card Vault icon">
       </div>
       <div class="app-name">Card Vault</div>
-      <p class="app-desc">A 14-game card platform bringing your favorite classic card games together in one polished, elegant collection.</p>
+      <p class="app-desc">A card platform bringing your favorite classic card games together in one polished, elegant collection.</p>
+      <span class="app-badge badge-live">Now on iOS &amp; Android</span>
+      <div class="platform-links">
+        <a href="https://apps.apple.com/ca/developer/brent-hamilton/id6779312493" class="btn-download" target="_blank" rel="noopener">App Store</a>
+        <a href="https://play.google.com/store/apps/details?id=com.brainfreezestudios.cardvault" class="btn-download" target="_blank" rel="noopener">Google Play</a>
+      </div>
+    </div>
+
+    <div class="app-card">
+      <div class="app-icon">
+        <img src="shatter-shot-icon.png" alt="Shatter Shot icon">
+      </div>
+      <div class="app-name">Shatter Shot</div>
+      <p class="app-desc">A fast, satisfying shooting gallery. Blast clay targets, win carnival tickets, and chase the perfect score.</p>
       <span class="app-badge badge-coming">Coming Soon</span>
     </div>
 
     <div class="app-card">
+      <div class="app-icon">
+        <img src="scrap-escape-icon.png" alt="Scrap Escape icon">
+      </div>
+      <div class="app-name">Scrap Escape</div>
+      <p class="app-desc">Guide a crew of scrappy little robots out of the scrapyard in this clever rescue puzzle.</p>
+      <span class="app-badge badge-coming">Coming Soon</span>
+    </div>
+
+    <div class="app-card">
+      <img class="app-photo" src="rico-rico-front.jpg" alt="Rico Rico restaurant front">
       <div class="app-icon">
         <img src="IMG_5151.jpg" alt="Rico Rico logo">
       </div>
@@ -516,6 +656,55 @@
     </div>
 
   </div>
+</section>
+
+<!-- GAMEPLAY -->
+<section class="section" id="gameplay" style="padding-top:0;">
+  <div class="section-title">See It In Action</div>
+
+  <div class="gameplay-group">
+    <h3>Sudoku Quest</h3>
+    <div class="shots">
+      <img src="sudoku-quest-1.jpg" alt="Sudoku Quest gameplay: medieval dungeon world" loading="lazy">
+      <img src="sudoku-quest-2.jpg" alt="Sudoku Quest gameplay: pool hall world" loading="lazy">
+      <img src="sudoku-quest-3.jpg" alt="Sudoku Quest gameplay: underwater world" loading="lazy">
+    </div>
+  </div>
+
+  <div class="gameplay-group">
+    <h3>Card Vault</h3>
+    <div class="shots">
+      <img src="card-vault-1.jpg" alt="Card Vault gameplay: War" loading="lazy">
+      <img src="card-vault-2.jpg" alt="Card Vault gameplay: Klondike solitaire" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <h2>About Brain Freeze Studios</h2>
+  <p>Brain Freeze Studios is a one-person indie studio. I'm Brent, the developer behind every game here. I design, build, and publish each one myself from a small town in Ontario, Canada.</p>
+</section>
+
+<!-- WORK WITH US -->
+<section class="work-section" id="work">
+  <div class="section-title">Work With Us</div>
+  <p class="work-intro">Running a local business without a good website? I build clean, fast sites and small digital tools for small businesses.</p>
+  <div class="work-grid">
+    <div class="work-card">
+      <h3>Websites</h3>
+      <p>A clean, mobile-friendly website for your shop, restaurant, or trade business, so customers can find you.</p>
+    </div>
+    <div class="work-card">
+      <h3>AI &amp; Automation</h3>
+      <p>Practical AI tools for small businesses, such as automated phone ordering and customer replies.</p>
+    </div>
+    <div class="work-card">
+      <h3>Custom Apps</h3>
+      <p>Have an app idea? Tell me what you need and your rough budget, and we'll talk it through.</p>
+    </div>
+  </div>
+  <a href="mailto:rslsolutioncanada@yahoo.com?subject=Website%20or%20app%20inquiry" class="btn-download">Get in Touch</a>
 </section>
 
 <!-- RSL PARTNERSHIP -->
